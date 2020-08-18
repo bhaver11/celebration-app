@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+            <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+        <link href="css/landingInstructor.css" rel="stylesheet">
+        <title></title>
+        <meta http-equiv="Content-Security-Policy" content="default-src * blob: data: gap: https://ssl.gstatic.com; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    </head>
+    <body style="background-image: url('img/background_vertical.jpg')">
+      <div class="login-parent">
+        <div class="card login-card" style="width: 18rem;">
+          <img class="card-img-top" id='logo' src="img/logoinfinity.png" alt="Card image cap">
+          <div class="card-body">
+            <!-- <h5 class="card-title"></h5> -->
+            <!-- <input type="text" id="otpInput"> -->
+            <input type="password" class="form-control" id="password" placeholder="Enter secret key">
+            <a href="#" class="btn btn-info btn-lg" onclick="enterPassword()" id='loginButton'>To infinity and beyond ..</a>
+            <h5 id="info" style="margin-top:2%"></h5>
+          </div>
+        </div>
+      </div>
+      <div class="dashboard">
+        <div class="row dashboard-row">
+          <div class="card login-card" style="width: 40%;">
+          <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
+        </div>
+        </div>
+        <div class="row dashboard-row" style="display:flex; justify-content: space-evenly">
+          <a href="#dates" class="custom-card">
+            <div class="card col-sm-6 dashboard-card">
+              <img class="card-img-top" src="img/schedule.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Important Dates</h5>
+              </div>
+            </div>
+          </a>
+          <a href="#poems" class="custom-card">
+            <div class="card col-sm-6 dashboard-card">
+              <img class="card-img-top" src="img/calendar.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Poems</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="row dashboard-row" style="display:flex; justify-content: space-evenly">
+          <a href="#picture-submenu" class="custom-card">
+            <div class="card col-sm-6 dashboard-card">
+              <img class="card-img-top" src="img/polaroid-camera.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Pictures</h5>
+              </div>
+            </div>
+          </a>
+          <a href="#screenshots" class="custom-card">
+            <div class="card col-sm-6 dashboard-card">
+              <img class="card-img-top" src="img/answer.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Screenshots</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="row dashboard-row" style="display:flex; justify-content: space-evenly">
+          <a href="#videos" class="custom-card">
+            <div class="card col-sm-6 dashboard-card">
+              <img class="card-img-top" src="img/ui.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Videos</h5>
+              </div>
+            </div>
+          </a>
+          <a href="#quote-day" class="custom-card">
+            <div class="card col-sm-6 dashboard-card">
+              <img class="card-img-top" src="img/left.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Quotes</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        </div>
+      </div>
+      <div class="picture-submenu">
+        <div class="row dashboard-row">
+          <div class="card login-card" style="width: 40%;">
+          <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
+        </div>
+        </div>
+        <div class="row dashboard-row" style="display:flex; justify-content: space-evenly">
+          <a href="#funny-pictures" class="custom-card">
+            <div class="card col-sm-6 dashboard-card">
+              <img class="card-img-top" src="img/emoji.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Laugh</h5>
+              </div>
+            </div>
+          </a>
+          <a href="#good-pictures" class="custom-card">
+            <div class="card col-sm-6 dashboard-card">
+              <img class="card-img-top" src="img/smile.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Smile</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        </div>
+      </div>
+      <div class="funny-pictures">
+        <div class="row">
+          <div class="card login-card" style="width: 20%;">
+          <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
+        </div>
+        </div>
+        <div class="row pictures-row-funny">
+          <div class="card login-card" id="loadingIconfunny" style="width: 50%;background: transparent;">
+            <img class="card-img-top" src="img/loading.gif" alt="Card image cap">
+            <div class="card-body"><h4>Loading...</h4></div>
+          </div>
+        
+        <!-- <a href='#picture-display' class='custom-card' style='width: 50%; height: 50%'>
+        <div class='card col-sm-6 picture-card' style='height: 100%'>
+          <img class='card-img-top' src="img/back_pink.jpg" style='width: 100%;height: 100%;'>
+          </div>
+          </a> -->
+        </div>
+        
+      </div>
+      <div class="good-pictures" style="display: none;">
+        <div class="row">
+          <div class="card login-card" style="width: 20%;">
+          <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
+        </div>
+        </div>
+        <div class="row pictures-row-good">
+          <div class="card login-card" id="loadingIcongood" style="width: 50%;background: transparent;">
+            <img class="card-img-top" src="img/loading.gif" alt="Card image cap">
+            <div class="card-body"><h4>Loading...</h4></div>
+          </div>
+        
+        <!-- <a href='#picture-display' class='custom-card' style='width: 50%; height: 50%'>
+        <div class='card col-sm-6 picture-card' style='height: 100%'>
+          <img class='card-img-top' src="img/back_pink.jpg" style='width: 100%;height: 100%;'>
+          </div>
+          </a> -->
+        </div>
+        
+      </div>
+      <div class="screenshots" style="display: none;">
+        <div class="row">
+          <div class="card login-card" style="width: 20%;">
+          <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
+        </div>
+        </div>
+        <div class="row pictures-row-screenshots">
+          <div class="card login-card" id="loadingIconscreenshots" style="width: 50%;background: transparent;">
+            <img class="card-img-top" src="img/loading.gif" alt="Card image cap">
+            <div class="card-body"><h4>Loading...</h4></div>
+          </div>
+        
+        <!-- <a href='#picture-display' class='custom-card' style='width: 50%; height: 50%'>
+        <div class='card col-sm-6 picture-card' style='height: 100%'>
+          <img class='card-img-top' src="img/back_pink.jpg" style='width: 100%;height: 100%;'>
+          </div>
+          </a> -->
+        </div>
+        
+      </div>
+      <div class="dates" style="display: none;">
+        <div class="row">
+          <div class="card login-card" style="width:  20%;">
+          <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="card login-card loadingIcondates" style="width: 50%;background: transparent;">
+            <img class="card-img-top" src="img/loading.gif" alt="Card image cap">
+            <div class="card-body"><h4>Loading...</h4></div>
+          </div>
+        </div>
+        <div class="row dates-row" style="height: auto;text-align: left;">
+        </div>
+      </div>
+      <div class="poems" style="display: none;">
+        <div class="row">
+          <div class="card login-card" style="width:  20%;">
+          <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="card login-card loadingIconpoems" style="width: 50%;background: transparent;">
+            <img class="card-img-top" src="img/loading.gif" alt="Card image cap">
+            <div class="card-body"><h4>Loading...</h4></div>
+          </div>
+        </div>
+        <div class="row poems-row" style="height: auto;text-align: left;">
+        </div>
+      </div>
+      <div class="videos" style="display: none;">
+        <div class="row dashboard-row">
+          <div class="card login-card" style="width: 40%;">
+          <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
+        </div>
+        </div>
+        <div class="row dashboard-row" style="display:flex; justify-content: space-evenly">
+          <a href="#birthday-wishes" class="custom-card">
+            <div class="card col-sm-6 dashboard-card">
+              <img class="card-img-top" src="img/cake.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Birthday wishes!</h5>
+              </div>
+            </div>
+          </a>
+          <a href="#our-journey" class="custom-card">
+            <div class="card col-sm-6 dashboard-card">
+              <img class="card-img-top" src="img/birthday-and-party.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Our Journey</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        </div>
+        <div class="picture-display" style="display: none;">
+          <img class="imageDisplay" src="img/class.png" alt="">
+        </div>
+        <div class="birthday-wishes" style="display: none;">
+          <h1>Happy Birthday Jia!</h1>
+          <video class="videoDisplay" id="birthday-wishes" preload="auto" poster="" width="640" height="480" controls preload>
+           <source src="https://firebasestorage.googleapis.com/v0/b/infinity-plus-one.appspot.com/o/videos%2F1.mp4?alt=media&token=29bf857a-51eb-4cef-baea-dfb5cdc91ba9" type="video/mp4"></source>
+          </video>
+         </div>
+         <div class="our-journey" style="display: none;">
+          <h1>The story of 2019!</h1>
+          <video class="videoDisplay" id="our-journey" preload="auto" poster="" width="640" height="480" controls preload>
+           <source src="https://firebasestorage.googleapis.com/v0/b/infinity-plus-one.appspot.com/o/videos%2Fvideocompress-090-XiaoYing_Video_1578132482332%5B1%5D.mp4?alt=media&token=df6fb5d6-c113-48d6-a0ec-c051fa4588b6" type="video/mp4"></source>
+          </video>
+         </div>
+         <div class="quote-day" style="display: none;">
+           <h4 style="margin: 10%">Quotes of the day!</h4>
+           <script type="text/javascript" src="https://theysaidso.com/gadgets/v3/theysaidso.js"></script>
+        <div class="tso_purply_box">
+          <script>TheySaidSo.render({ qod_category : 'inspire'});</script>
+        </div>
+        <div class="tso_purply_box">
+          <script>TheySaidSo.render({ qod_category : 'love'});</script>
+        </div>
+        <div class="tso_purply_box">
+          <script>TheySaidSo.render({ qod_category : 'funny'});</script>
+        </div>
+         </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="jquery-3.4.1.slim.min.js" ></script>
+    <script src="popper.js/dist/umd/popper.min.js" ></script>
+    <script src="bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+    <link href="css/bootstrap-pincode-input.css" rel="stylesheet">
+    <script src="js/bootstrap-pincode-input.js"></script>
+    <script>
+      var toggle=true;
+      function navItemToggleCSS() {
+        console.log("toggle:"+toggle);
+        if(toggle) {
+          $('#loginLinkParent').css({"position":"relative","left":"0"})
+          $('#registerButtonParent').css({"position":"relative","left":"0"})
+          toggle = false;
+        }else {
+          $('#loginLinkParent').css({"position":"absolute","right":"12rem","left":""})
+          $('#registerButtonParent').css({"position":"absolute","right":"5rem","left": ""})
+          toggle = true;
+        }
+        
+      }
+    </script>
+        <script type="text/javascript" src="cordova.js"></script>
+        
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCnooyx4xujIP9SccYZJrMBYKIoGrByLaE",
+    authDomain: "infinity-plus-one.firebaseapp.com",
+    databaseURL: "https://infinity-plus-one.firebaseio.com",
+    projectId: "infinity-plus-one",
+    storageBucket: "infinity-plus-one.appspot.com",
+    messagingSenderId: "663796731971",
+    appId: "1:663796731971:web:7823928713ec26520584f6",
+    measurementId: "G-6LNDLJP3V8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.firestore().enablePersistence()
+  .catch(function(err) {
+      if (err.code == 'failed-precondition') {
+          // Multiple tabs open, persistence can only be enabled
+          // in one tab at a a time.
+          // ...
+      } else if (err.code == 'unimplemented') {
+          // The current browser does not support all of the
+          // features required to enable persistence
+          // ...
+      }
+  });
+
+</script>
+<script>
+
+  document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
+
+var xDown = null;                                                        
+var yDown = null;
+
+function getTouches(evt) {
+  return evt.touches ||             // browser API
+         evt.originalEvent.touches; // jQuery
+}                                                     
+
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;                                      
+};                                                
+
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( xDiff > 0 ) {
+            changePicture(1);
+            /* left swipe */ console.log("left swipe");
+        } else {
+            changePicture(-1);
+            /* right swipe */console.log("right swipe");
+        }                       
+    } else {
+        if ( yDiff > 0 ) {
+            /* up swipe */ 
+        } else { 
+            /* down swipe */
+        }                                                                 
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;                                             
+};
+  </script>
+   
+  <!-- <div id="touchsurface" style="height: 300px;">Swipe Me</div> -->
+<!-- <input type="file" onchange="previewFile()"><br> -->
+<!-- <img src="" height="200" alt="Image preview..."> -->
+<script src="js/image.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script src="js/firebaseDb.js"></script>
+<script src="js/upload.js"></script>
+
+    </body>
+</html>

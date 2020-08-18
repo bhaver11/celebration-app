@@ -1,0 +1,269 @@
+body {
+    /* min-height: 100rem; */
+    padding-top: 4.5rem;
+}
+#bodhiTreeTitle {
+    position: relative;
+    margin-left: 10%;
+    padding-right: 0;
+    /* left: 3rem; */
+    /* right: 10px; */
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: rgba(112,112,112,1);
+}
+
+#exploreButtonParent {
+    position: relative;
+    white-space: nowrap;
+}
+
+.exploreButton {
+    font-family: Open Sans;
+    font-style: normal;
+    text-align: center;
+    background-color: rgba(0, 80, 141, 1)
+}
+
+#searchGroup{
+    position: absolute;
+    height: 2rem;
+    width: 30%;
+    left: 33%;
+    z-index: 2000;
+    top: 1.2%;
+    padding-left: 5%;
+}
+
+#loginLink {
+    white-space: nowrap;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    color: rgba(0,80,141,1);
+}
+
+#loginLinkParent{
+    position: absolute;
+    right: 12rem;
+}
+#registerButtonParent{
+    position: absolute;
+    right: 5rem;
+    /* margin-right: 10rem; */
+    /* left:22rem; */
+}
+
+body {
+    text-align: center;
+}
+
+  .bluebackground {
+    background:  rgba(0, 80, 141, 1);
+    margin-top: -5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  .courseIntroParent {
+      width: 90%;
+  }
+
+  .courseInfo {
+      color: white;
+      margin-top: 8%;
+      margin-bottom: 5%;
+      display: flex;
+      /* height: 100%; */
+      flex-direction: column;
+      /* justify-content: space-evenly; */
+      justify-content: space-between;
+      align-items: center;
+      text-align: justify;
+  }
+
+  #courseTitle, #courseDesc, .enrollButton {
+      margin-top: 2%;
+      margin-bottom: 2%;
+  }
+
+  .courseVideoParent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 50%;
+      margin-top: 6%;
+      margin-bottom: 2%;
+  }
+
+  .courseVideo {
+    width: 100%;
+  }
+
+  #courseDesc {
+      width: 80%;
+  }
+
+  #courseTitle {
+      width: 80%;
+  }
+
+  .enrollButton {
+    background-color: white;
+    color: rgb(0, 80, 141);
+    font-size: 80%;
+    border-radius: 10px;
+    width: 35%;
+    max-width: 20%; 
+    min-width: 50px;
+    margin-left: 60%;
+  }
+
+
+.syllabusParent, .instructorParent {
+    width: 80%;
+}
+
+
+.instructorParent {
+    padding-bottom: 4%;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: lightgrey;
+}
+
+.syllabusHeader, .instructorHeader, .instructorName {
+    text-align: left;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    color: rgba(74,74,74,1);
+}
+
+.instructorParent {
+    margin-top: 3%;
+}
+.instructorImage {
+    margin-top: 2%;
+    max-height: 150px;
+    max-width: 150px;
+}
+
+.instructorName {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: 1%;
+}
+
+.instructorSpecialization, .instructorQuote {
+    margin-top: 1%;
+}
+
+.instructorGrid {
+    display: flex;
+    align-content: space-between;
+    margin-top: 1%;
+    margin: auto;
+}
+
+.instructor {
+    margin: 2%;
+}
+
+.misc-icon {
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+}
+
+.misc-info {
+    /* margin: 1rem; */
+    text-align: left;
+}
+
+.misc-header {
+    font-weight: bold;
+}
+
+.chapterInfo {
+    margin-top: 7%;
+    text-align: left;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    color: rgba(74,74,74,1);
+}
+
+.chapterNumber {
+    font-size: 1.3rem;   
+}
+
+.chapterTime {
+    margin-top: 2%;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.chapterDesc {
+    margin-top: 1%;
+    font-size: 0.9rem;
+}
+
+.chapterVideos {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.instituteCardsGroup {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    align-items: stretch;
+}
+
+.institute{
+    color: rgba(112,112,112,1);
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+    min-width: 120px;
+}
+
+.separator {
+    margin-top: 4%;
+    width: 100%;
+    height: 1px;
+    background-color: lightgray
+}
+
+.mainBody {
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: space-around;
+    margin-top: 5%;
+    width: 100%;
+    height: auto;
+}
+
+.footer {
+    margin-top: 10%;
+    width: 80%;
+}
+
+.coursesFlexForSeparator {
+    width: 80%;
+}

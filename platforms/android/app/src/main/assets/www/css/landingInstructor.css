@@ -1,0 +1,230 @@
+body {
+    padding-top: 4.5rem;
+}
+#bodhiTreeTitle {
+    position: relative;
+    margin-left: 10%;
+    padding-right: 0;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: rgba(112,112,112,1);
+}
+
+#exploreButtonParent {
+    position: relative;
+    white-space: nowrap;
+}
+
+.exploreButton {
+    font-family: Open Sans;
+    font-style: normal;
+    text-align: center;
+    background-color: rgba(0, 80, 141, 1)
+}
+
+.exploreCoursesButton {
+    text-align: center;
+    font-size: small;
+    width: 85%;
+    background-color: white;
+    color: grey;
+    border-color: lightgrey;
+    border-style: groove;
+    border-radius: 5px;
+    margin-bottom: 0;
+    margin-top: 20%;
+}
+
+
+#searchGroup{
+    position: absolute;
+    height: 2rem;
+    width: 30%;
+    left: 33%;
+    z-index: 2000;
+    top: 1.2%;
+    padding-left: 5%;
+}
+
+#loginLink {
+    white-space: nowrap;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    color: rgba(0,80,141,1);
+}
+
+#loginLinkParent{
+    position: absolute;
+    right: 12rem;
+}
+#registerButtonParent{
+    position: absolute;
+    right: 5rem;
+}
+
+  .bluebackground {
+    background:  rgba(0, 80, 141, 1);
+    margin-top: -5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  .courseIntroParent {
+      width: 60%;
+      margin-top: 6%;
+  }
+
+  .courseInfo {
+      color: white;
+      margin-top: 8%;
+      margin-bottom: 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+  }
+
+  #taglineHeader, #tagline, .signupButton {
+      margin-top: 2%;
+      margin-bottom: 2%;
+  }
+
+  #taglineHeader {
+      width: 80%;
+      min-width: 250px;
+  }
+
+  .signupButton {
+    background-color: white;
+    color: rgb(0, 80, 141);
+    font-size: 80%;
+    border-radius: 10px;
+    width: 25%;
+    min-width: 150px;
+  }
+
+body {
+    text-align: center;
+}
+
+.tagline {
+    height: 100%;
+    margin-left: 29%;
+    background: linear-gradient(-75deg, rgba(0, 80, 141, 1) 65%, transparent 65%);
+    display: flex;
+  }
+
+.font-style {
+    text-align: left;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    color: rgba(74,74,74,1);
+}
+
+
+.institutesParent {
+    margin-top: 2%;
+    width: 80%;
+}
+
+.coursesParent {
+    width: 80%;
+    margin-top: 2%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 4%;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: lightgrey;
+}
+
+.institutesHeader {
+    text-align: center;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 90%;
+    color: rgba(74,74,74,1);
+}
+
+.instituteCardsGroup {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    align-items: stretch;
+}
+
+.institute{
+    color: rgba(112,112,112,1);
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+    min-width: 120px;
+}
+
+.course {
+    color: rgba(112,112,112,1);
+    margin: 1%;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+
+
+.separator {
+    margin-top: 4%;
+    margin-bottom: 4%;
+    width: 100%;
+    height: 1px;
+    background-color: lightgray
+}
+
+.courseHeader {
+    color: rgba(112,112,112,1);
+    flex-grow: 1;
+    flex-basis: 0;
+    margin: 2%;
+    margin-right: 3%;
+    text-align: left;
+    border-color: transparent;
+}
+
+.course, .courseHeader {
+  min-width: 150px;  
+  max-width: 200px;
+  padding: 0;
+}
+
+.mainBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: space-around;
+    margin-top: 5%;
+    width: 100%;
+    height: auto;
+}
+
+.footer {
+    width: 80%;
+}
+
+.coursesFlexForSeparator {
+    width: 80%;
+}
