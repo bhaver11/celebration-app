@@ -46,9 +46,10 @@ var app = {
 app.initialize();
 
 $(document).ready(function() {
+    loadDashBoard()
     $(window).on('hashchange', function(){
         // Your code goes here
-        // loadPage();
+        loadPage();
     }).trigger('hashchange'); 
     $(".videoDisplay").on("click", function(){
         if(!$.browser.mozilla) {
@@ -124,9 +125,9 @@ function loadPage() {
     if(page=="poems") {
         getTextData("poems")
     }
-    if(lastPage="birthday-wishes")
+    if(lastPage=="birthday-wishes")
         $("#birthday-wishes").get(0).pause();
-    if(lastPage="our-journey")
+    if(lastPage=="our-journey")
         $("#our-journey").get(0).pause();
     if(page=="birthday-wishes")
         $("#birthday-wishes").get(0).play();
