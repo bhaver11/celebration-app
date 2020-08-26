@@ -48,7 +48,7 @@ app.initialize();
 $(document).ready(function() {
     $(window).on('hashchange', function(){
         // Your code goes here
-        loadPage();
+        // loadPage();
     }).trigger('hashchange'); 
     $(".videoDisplay").on("click", function(){
         if(!$.browser.mozilla) {
@@ -89,7 +89,7 @@ function enterPassword() {
 }
 
 function checkPassword(password) {
-    if(password=="iplusone")
+    if(password=="august")
         return true;
     else
         return false;

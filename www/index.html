@@ -48,18 +48,23 @@
     <body style="background-image: url('img/background_vertical.jpg')">
       <div class="login-parent">
         <div class="card login-card" style="width: 18rem;">
-          <img class="card-img-top" id='logo' src="img/logoinfinity.png" alt="Card image cap">
+          <img class="card-img-top" id='logo' src="img/cake.png" alt="Card image cap">
+          <div class="alert alert-success first-message" role="alert">
+            <h5 class="alert-heading">Happy Birthday Vridhi!! 🤩</h5>
+            <p style="font-size: small;">Baar baar din ye aae ... Baar baar dil ye gaye ... </p>
+            <p class="mb-0">Please treat ke paise bhej dena :p</p>
+          </div>
           <div class="card-body">
             <!-- <h5 class="card-title"></h5> -->
             <!-- <input type="text" id="otpInput"> -->
-            <input type="password" class="form-control" id="password" placeholder="Enter secret key">
-            <a href="#" class="btn btn-info btn-lg" onclick="enterPassword()" id='loginButton'>To infinity and beyond ..</a>
+            <input type="password" class="form-control" id="password" placeholder="Verify that you are vridhi, enter secret key ..">
+            <a href="#" class="btn btn-info btn-lg" onclick="enterPassword()" id='loginButton'>Thank you! Show me more ..</a>
             <h5 id="info" style="margin-top:2%"></h5>
           </div>
         </div>
       </div>
       <div class="dashboard">
-        <div class="row dashboard-row">
+        <!-- <div class="row dashboard-row">
           <div class="card login-card" style="width: 40%;">
           <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
         </div>
@@ -118,7 +123,7 @@
             </div>
           </a>
         </div>
-        </div>
+        </div> -->
       </div>
       <div class="picture-submenu">
         <div class="row dashboard-row">
@@ -166,7 +171,7 @@
         </div>
         
       </div>
-      <div class="good-pictures" style="display: none;">
+      <!-- <div class="good-pictures" style="display: none;">
         <div class="row">
           <div class="card login-card" style="width: 20%;">
           <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
@@ -177,12 +182,6 @@
             <img class="card-img-top" src="img/loading.gif" alt="Card image cap">
             <div class="card-body"><h4>Loading...</h4></div>
           </div>
-        
-        <!-- <a href='#picture-display' class='custom-card' style='width: 50%; height: 50%'>
-        <div class='card col-sm-6 picture-card' style='height: 100%'>
-          <img class='card-img-top' src="img/back_pink.jpg" style='width: 100%;height: 100%;'>
-          </div>
-          </a> -->
         </div>
         
       </div>
@@ -197,12 +196,6 @@
             <img class="card-img-top" src="img/loading.gif" alt="Card image cap">
             <div class="card-body"><h4>Loading...</h4></div>
           </div>
-        
-        <!-- <a href='#picture-display' class='custom-card' style='width: 50%; height: 50%'>
-        <div class='card col-sm-6 picture-card' style='height: 100%'>
-          <img class='card-img-top' src="img/back_pink.jpg" style='width: 100%;height: 100%;'>
-          </div>
-          </a> -->
         </div>
         
       </div>
@@ -291,7 +284,7 @@
           <script>TheySaidSo.render({ qod_category : 'funny'});</script>
         </div>
          </div>
-    
+     -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="jquery-3.4.1.slim.min.js" ></script>
@@ -318,27 +311,29 @@
         <script type="text/javascript" src="cordova.js"></script>
         
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
 
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
 
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
 
-
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyCnooyx4xujIP9SccYZJrMBYKIoGrByLaE",
-    authDomain: "infinity-plus-one.firebaseapp.com",
-    databaseURL: "https://infinity-plus-one.firebaseio.com",
-    projectId: "infinity-plus-one",
-    storageBucket: "infinity-plus-one.appspot.com",
-    messagingSenderId: "663796731971",
-    appId: "1:663796731971:web:7823928713ec26520584f6",
-    measurementId: "G-6LNDLJP3V8"
+    apiKey: "AIzaSyDqCQROKpotiok8s99LE_cLvvCrZkarOpE",
+    authDomain: "birthday-august.firebaseapp.com",
+    databaseURL: "https://birthday-august.firebaseio.com",
+    projectId: "birthday-august",
+    storageBucket: "birthday-august.appspot.com",
+    messagingSenderId: "583172362816",
+    appId: "1:583172362816:web:3f9e96466b80faa72505a5",
+    measurementId: "G-63Q48FNR1T"
+    
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -354,7 +349,7 @@
           // ...
       }
   });
-
+  firebase.analytics();
 </script>
 <script>
 

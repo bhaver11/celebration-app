@@ -126,8 +126,26 @@ h1 {
     /* align-items: center; */
 }
 
+#loginButton {
+    /* background-color: pink; */
+    /* color: black; */
+    /* border: 0 */
+    
+}
+
+.first-message{
+    background: pink;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    /* background: transparent; */
+    color: black 
+    
+}
+
 #password {
     display: none;
+    font-size:small;
     /* margin-top: 0; */
 }
 

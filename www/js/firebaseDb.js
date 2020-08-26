@@ -3,6 +3,36 @@ var starsRef = storage.ref().child('pictures/bodhitree_fc5.png');
 var urlArray;
 var db = firebase.firestore();
 
+
+// console.log("Calling")
+
+// function checkPassword(password) {
+//   firebase.auth().signInWithEmailAndPassword("a@b.com", password).catch(function(error) {
+//     // Handle Errors here.
+//     console.log(error)
+//     var errorCode = error.code;
+//     var errorMessage = error.message;
+//     // ...
+//   });
+//  firebase.auth().onAuthStateChanged(function(user) {
+//   if (user) {
+//     // User is signed in.
+
+//     var email = user.email;
+//     console.log('email : ' + email)
+//     loadDashBoard();
+//     // ...
+//   } else {
+//     // User is signed out.
+//     // ...
+//   }
+// });
+// }
+// 
+
+
+
+
 function getImageUrls(type) {
     db.collection("images").doc(type+"urls").get()
     .then(function(doc) {
