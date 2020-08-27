@@ -34,16 +34,17 @@ var db = firebase.firestore();
 
 
 function getImageUrls(type) {
+  // console.log("calling get image")
     db.collection("images").doc(type+"urls").get()
     .then(function(doc) {
         var imageArray = [];
-        console.log(doc.data()['url']);
+        // console.log(doc.data()['url']);
         doc.data()['url'].forEach(url => {
           if(url!="")
             imageArray.push(url);
         
         });
-        console.log(imageArray);
+        // console.log(imageArray);
         displayImages(imageArray,type);
     })
     .catch(function(error) {
@@ -57,7 +58,7 @@ function getTextData(type) {
   .then(querySnapshot => {
     querySnapshot.docs.forEach(doc => {
     textData.push(doc.data());
-    console.log(doc.data());
+    // console.log(doc.data());
     displayTextData(textData,type);
   });})
 }
@@ -96,7 +97,7 @@ url = proxyurl + url;
     //     // save
       
   urlArray.push(url);
-  console.log(url);
+  // console.log(url);
 }).catch(function(error) {
 
   // A full list of error codes is available at

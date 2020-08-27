@@ -176,6 +176,12 @@ h1 {
     /* height: 300px; */
 }
 
+.pictures, .pictures-row-pictures {
+    overflow-y: hidden;
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .card-body {
     padding: 0;
 }
@@ -224,4 +230,8 @@ a.custom-card:hover {
     margin:auto;
     padding-top: 10%;
     padding-bottom: 10%;
+}
+
+.img-double {
+    max-height: 10%;
 }

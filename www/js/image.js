@@ -2,10 +2,10 @@ var fileSystem;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
-    console.log(cordova.file);
+    // console.log(cordova.file);
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
         var fileSystem;
-        console.log('file system open: ' + fs.name);
+        // console.log('file system open: ' + fs.name);
         fileSystem = fs;
         getSampleFile(fs.root);
         // fileread(fs.root,"downloadedImage.png");
@@ -15,7 +15,7 @@ function onDeviceReady() {
 
 function readFile(url) {
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
-        console.log("Calling file read");
+        // console.log("Calling file read");
         fileread(fs.root,url);
     }, onErrorLoadFs);
 }
@@ -27,7 +27,7 @@ function fileread(dirEntry, url) {
     );
 // var fileName = url.substring(url.lastIndexOf('/')+1)+".jpeg";
 dirEntry.getFile(fileName, { create: false, exclusive: false }, function (fileEntry) {
-    console.log("Getting file : "+fileName);
+    // console.log("Getting file : "+fileName);
     readBinaryFile(fileEntry,dirEntry,url);
 }, ()=>onErrorCreateFile(dirEntry,url));
 }
@@ -45,16 +45,16 @@ function getSampleFile(dirEntry,url) {
 
   xhr.onload = function() {
       if (this.status == 200) {
-          console.log("Received file from : "+url);
+        //   console.log("Received file from : "+url);
           var blob = new Blob([this.response], { type: 'image/png' });
-          console.log("Calling save file");
+        //   console.log("Calling save file");
           
         //   var filename = url.substring(url.lastIndexOf('/')+1)
             // console.log("filename :" +filename);
           saveFile(dirEntry, blob, url);
       }
   };
-  console.log("Sending request for "+url);
+//   console.log("Sending request for "+url);
   xhr.send();
 }
 
@@ -63,7 +63,7 @@ function saveFile(dirEntry, fileData, url) {
             url.lastIndexOf("%") + 1, 
             url.lastIndexOf("?")
         );
-    console.log("Saving file : "+fileName);
+    // console.log("Saving file : "+fileName);
   dirEntry.getFile(fileName, { create: true, exclusive: false }, function (fileEntry) {
 
       writeFile(fileEntry, fileData,url);
@@ -85,7 +85,7 @@ function writeFile(fileEntry, dataObj, url,isAppend) {
   fileEntry.createWriter(function (fileWriter) {
 
       fileWriter.onwriteend = function() {
-          console.log("Successful file write...");
+        //   console.log("Successful file write...");
           if (dataObj.type == "image/png") {
               readBinaryFile(fileEntry,null,url);
           }
@@ -108,7 +108,7 @@ function readBinaryFile(fileEntry,dirEntry,url) {
 
       reader.onloadend = function() {
 
-          console.log("Successful file write: " + this.result);
+        //   console.log("Successful file write: " + this.result);
           // displayFileData(fileEntry.fullPath + ": " + this.result);
 
           var blob = new Blob([new Uint8Array(this.result)], { type: "image/png" });
@@ -130,13 +130,13 @@ function displayImage(blob,url) {
         url.lastIndexOf(".")
         );
         // Displays image if result is a valid DOM string for an image.
-    console.log("image downloaded : id "+id);
+    // console.log("image downloaded : id "+id);
 var elem = document.getElementById(id);
 // Note: Use window.URL.revokeObjectURL when finished with image.
 elem.src = window.URL.createObjectURL(blob);
 }
 function displayImageByFileURL(fileEntry) {
-  console.log("displaying image");
+//   console.log("displaying image");
   var elem = document.getElementById('logo');
   elem.src = fileEntry.toURL();
 }
