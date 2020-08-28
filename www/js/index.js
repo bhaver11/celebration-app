@@ -45,9 +45,14 @@ var app = {
 
 app.initialize();
 
+function goBack() {
+    window.location = "#dashboard"
+}
+
 $(document).ready(function() {
     // loadDashBoard()
     // loadPage()
+    $('.back-button').click(goBack);
     // window.location = "#login-parent"
     $(window).on('hashchange', function(){
         // Your code goes here
@@ -117,6 +122,10 @@ function loadPage() {
             $("."+lastPage).hide(500);
         $("."+page).slideDown(500);
     }
+    if(page=='dashboard' || page=='login-parent')
+        $('.back-button').hide(500);
+    else
+        $('.back-button').show();
     if(page=='sketch'){
         $('.imageDisplay').attr('src','img/sketch.jpg')
     }
@@ -184,7 +193,7 @@ function displayImages(imageArray,type){
             // console.log("Adding id="+id);
             $(".pictures-row-"+type).append(pictureHTMLprefix+"src='img/loading.gif' id='"+id+"' onclick='displayPicture(this)'"+pictureHTMLsuffix);   
             $("#"+id).addClass(type+"pic_"+classCount);
-            readFile(url);
+            // readFile(url);
         }
         classCount++;
     });

@@ -3,17 +3,48 @@ var starsRef = storage.ref().child('pictures/bodhitree_fc5.png');
 var urlArray;
 var db = firebase.firestore();
 
+
+// console.log("Calling")
+
+// function checkPassword(password) {
+//   firebase.auth().signInWithEmailAndPassword("a@b.com", password).catch(function(error) {
+//     // Handle Errors here.
+//     console.log(error)
+//     var errorCode = error.code;
+//     var errorMessage = error.message;
+//     // ...
+//   });
+//  firebase.auth().onAuthStateChanged(function(user) {
+//   if (user) {
+//     // User is signed in.
+
+//     var email = user.email;
+//     console.log('email : ' + email)
+//     loadDashBoard();
+//     // ...
+//   } else {
+//     // User is signed out.
+//     // ...
+//   }
+// });
+// }
+// 
+
+
+
+
 function getImageUrls(type) {
+  // console.log("calling get image")
     db.collection("images").doc(type+"urls").get()
     .then(function(doc) {
         var imageArray = [];
-        console.log(doc.data()['url']);
+        // console.log(doc.data()['url']);
         doc.data()['url'].forEach(url => {
           if(url!="")
             imageArray.push(url);
         
         });
-        console.log(imageArray);
+        // console.log(imageArray);
         displayImages(imageArray,type);
     })
     .catch(function(error) {
@@ -27,7 +58,7 @@ function getTextData(type) {
   .then(querySnapshot => {
     querySnapshot.docs.forEach(doc => {
     textData.push(doc.data());
-    console.log(doc.data());
+    // console.log(doc.data());
     displayTextData(textData,type);
   });})
 }
@@ -66,7 +97,7 @@ url = proxyurl + url;
     //     // save
       
   urlArray.push(url);
-  console.log(url);
+  // console.log(url);
 }).catch(function(error) {
 
   // A full list of error codes is available at

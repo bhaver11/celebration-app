@@ -46,10 +46,13 @@ var app = {
 app.initialize();
 
 $(document).ready(function() {
+    // loadDashBoard()
+    // loadPage()
+    // window.location = "#login-parent"
     $(window).on('hashchange', function(){
         // Your code goes here
         loadPage();
-    }).trigger('hashchange'); 
+    }); 
     $(".videoDisplay").on("click", function(){
         if(!$.browser.mozilla) {
         // mozilla HTML5 video auto-supports auto click-to-play
@@ -89,57 +92,44 @@ function enterPassword() {
 }
 
 function checkPassword(password) {
-    if(password=="iplusone")
+    if(password=="august")
         return true;
     else
         return false;
 }
-
+var page='login-parent';
 function loadDashBoard(){
     $('.login-parent').hide(250);
-    $('.dashboard').slideDown(250);    
+    $('.dashboard').slideDown(250); 
     window.location = "#dashboard"
 }
-var page;
+
 function loadPage() {
     lastPage = page;
     page = window.location.href.toString().split("#")[1];
     console.log("Last page: "+lastPage+"Curr page: "+page);
-    if(lastPage=="dashboard" && (page == "" || page =="dashboard")){
-        if(page==lastPage){
-            navigator.app.exitApp();
-        }
-        page="dashboard";
-        window.location.href = "#dashboard"
-        return;
+    if(lastPage=="dashboard" && page == undefined){
+        navigator.app.exitApp();
     }
     if(page) {
-    if(lastPage)
-        $("."+lastPage).hide(400);
-    $("."+page).show(400);
+        
+        if(lastPage)
+            $("."+lastPage).hide(500);
+        $("."+page).slideDown(500);
     }
-    if(page=="dates") {
-        getTextData("dates");
+    if(page=='sketch'){
+        $('.imageDisplay').attr('src','img/sketch.jpg')
     }
-    if(page=="poems") {
-        getTextData("poems")
-    }
-    if(lastPage="birthday-wishes")
-        $("#birthday-wishes").get(0).pause();
-    if(lastPage="our-journey")
-        $("#our-journey").get(0).pause();
-    if(page=="birthday-wishes")
-        $("#birthday-wishes").get(0).play();
-    if(page=="our-journey")
-        $("#our-journey").get(0).play();    
-    if(page=="good-pictures")
-        getImageUrls("good");
-    if(page=='funny-pictures')
-        getImageUrls("funny");
-    if(page=='screenshots')
-        getImageUrls("screenshots");
+    if(page=="pictures")
+        getImageUrls("pictures");
     if(page=='picture-display') {
         $('body').css('background-image','');
+    }
+    if(lastPage=='video'){
+        $('#birthday-wishes').get(0).pause()
+    }
+    if(page=='video'){
+        $('#birthday-wishes').get(0).play()
     }
     else
         $('body').css('background-image',"url('img/background_vertical.jpg')");        
@@ -147,13 +137,13 @@ function loadPage() {
 }
 
 function playVideo() {
-    // VideoPlayer.play("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4");
+    //  VideoPlayer.play("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4");
 }
 
 var pictureHTMLprefix=
 "<a href='#picture-display' class='custom-card' style='width: 50%; height: 50%'>"+
     "<div class='card col-sm-6 picture-card' style='height: 100%'>"+
-        "<img class='card-img-top'  style='width: 100%;height: 100%;padding: 0'";
+        "<img class='card-img-top'  style='width: 98%;height: 100%;padding: 0'";
 var pictureHTMLsuffix=
 ">"+
     "</div>"+
@@ -171,19 +161,19 @@ function displayTextData(textData,type) {
     $(".loadingIcon"+type).hide();
     $("."+type+"-row").html('');
     textData.forEach(dataMap => {
-        var titleKey = type=="dates"?"date":"title"
+        var titleKey = type=="dates"?"date":"from"
         $("."+type+"-row").append(cardHTMLprefix+dataMap[titleKey]+cardHTMLmid+dataMap['desc']+cardHTMLend);
     })
 }
 
 function displayImages(imageArray,type){
     var classCount=1;
-    console.log("displaying images");
-    console.log(imageArray);
+    // console.log("displaying images");
+    // console.log(imageArray);
     $("#loadingIcon"+type).hide();
     // $(".pictures-row").html('');
     imageArray.forEach(url => {
-        console.log("hello");
+        // console.log("hello");
         var id = url.substring(
             url.lastIndexOf("%") + 1, 
             url.lastIndexOf(".")
@@ -191,7 +181,7 @@ function displayImages(imageArray,type){
         if($("#"+id).length){
 
         }else {
-            console.log("Adding id="+id);
+            // console.log("Adding id="+id);
             $(".pictures-row-"+type).append(pictureHTMLprefix+"src='img/loading.gif' id='"+id+"' onclick='displayPicture(this)'"+pictureHTMLsuffix);   
             $("#"+id).addClass(type+"pic_"+classCount);
             readFile(url);
@@ -201,21 +191,21 @@ function displayImages(imageArray,type){
 }
 
 function displayPicture(el) {
-    console.log($(el).attr('class').split(" ")[1]);
+    // console.log($(el).attr('class').split(" ")[1]);
     $(".imageDisplay").attr("src",$(el).attr("src")); 
     $(".imageDisplay").attr("id",$(el).attr('class').split(" ")[1])
 }
 
 function changePicture(inc) {
-    console.log("change picture called with inc : "+inc);
+    // console.log("change picture called with inc : "+inc);
     if(page=="picture-display"){
         curId=$(".imageDisplay").attr('id');
         curprefix=curId.split("_")[0];
         curNum = curId.split("_")[1];
-        console.log("curNum = "+curNum);
+        // console.log("curNum = "+curNum);
         curNum = Number(curNum) + Number(inc);
-        console.log("New num = "+curNum);
-        console.log(curprefix+curNum);
+        // console.log("New num = "+curNum);
+        // console.log(curprefix+curNum);
         displayPicture($("."+curprefix+"_"+curNum));
     }
 }

@@ -48,12 +48,17 @@
     <body style="background-image: url('img/background_vertical.jpg')">
       <div class="login-parent">
         <div class="card login-card" style="width: 18rem;">
-          <img class="card-img-top" id='logo' src="img/logoinfinity.png" alt="Card image cap">
+          <img class="card-img-top" id='logo' src="img/cake.png" alt="Card image cap">
+          <div class="alert alert-success first-message" role="alert">
+            <h5 class="alert-heading">Happy Birthday Vridhi!! 🤩</h5>
+            <p style="font-size:">Baar baar din ye aae ... <br>Baar baar dil ye gaye ... </p>
+            <p class="mb-0">Please treat ke paise bhej dena :p</p>
+          </div>
           <div class="card-body">
             <!-- <h5 class="card-title"></h5> -->
             <!-- <input type="text" id="otpInput"> -->
-            <input type="password" class="form-control" id="password" placeholder="Enter secret key">
-            <a href="#" class="btn btn-info btn-lg" onclick="enterPassword()" id='loginButton'>To infinity and beyond ..</a>
+            <input type="password" class="form-control" id="password" placeholder="Verify that you are vridhi, enter secret key ..">
+            <a href="#dashboard" class="btn btn-info btn-lg" id='loginButton'>Thank you! Show me more ..</a>
             <h5 id="info" style="margin-top:2%"></h5>
           </div>
         </div>
@@ -61,29 +66,22 @@
       <div class="dashboard">
         <div class="row dashboard-row">
           <div class="card login-card" style="width: 40%;">
-          <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
+          <img class="card-img-top" src="img/cake.png" alt="Card image cap">
         </div>
         </div>
+        <div style="width: 60%;margin: auto;background:transparent;border:none;color:black">
+            <h6>Happy Birthday Vridhi 🤩 </h6>
+        </div>  
         <div class="row dashboard-row" style="display:flex; justify-content: space-evenly">
-          <a href="#dates" class="custom-card">
+          <a href="#messages" class="custom-card">
             <div class="card col-sm-6 dashboard-card">
-              <img class="card-img-top" src="img/schedule.png" alt="Card image cap">
+              <img class="card-img-top" src="img/answer.png" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Important Dates</h5>
+                <h5 class="card-title">Messages</h5>
               </div>
             </div>
           </a>
-          <a href="#poems" class="custom-card">
-            <div class="card col-sm-6 dashboard-card">
-              <img class="card-img-top" src="img/calendar.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Poems</h5>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="row dashboard-row" style="display:flex; justify-content: space-evenly">
-          <a href="#picture-submenu" class="custom-card">
+          <a href="#pictures" class="custom-card">
             <div class="card col-sm-6 dashboard-card">
               <img class="card-img-top" src="img/polaroid-camera.png" alt="Card image cap">
               <div class="card-body">
@@ -91,24 +89,36 @@
               </div>
             </div>
           </a>
-          <a href="#screenshots" class="custom-card">
+          
+        </div>
+        <div class="row dashboard-row" style="display:flex; justify-content: space-evenly">
+          <a href="#video" class="custom-card">
+            <div class="card col-sm-6 dashboard-card">
+              <img class="card-img-top" src="img/ui.png" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Video</h5>
+              </div>
+            </div>
+          </a>
+          <a href="#sketch" class="custom-card">
+            <div class="card col-sm-6 dashboard-card">
+              <img class="card-img-top" src="img/sketch_icon.png  " alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Safe Sketch</h5>
+              </div>
+            </div>
+          </a>
+          <!-- <a href="#screenshots" class="custom-card">
             <div class="card col-sm-6 dashboard-card">
               <img class="card-img-top" src="img/answer.png" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Screenshots</h5>
               </div>
             </div>
-          </a>
+          </a> -->
         </div>
-        <div class="row dashboard-row" style="display:flex; justify-content: space-evenly">
-          <a href="#videos" class="custom-card">
-            <div class="card col-sm-6 dashboard-card">
-              <img class="card-img-top" src="img/ui.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Videos</h5>
-              </div>
-            </div>
-          </a>
+        <!-- <div class="row dashboard-row" style="display:flex; justify-content: space-evenly">
+          
           <a href="#quote-day" class="custom-card">
             <div class="card col-sm-6 dashboard-card">
               <img class="card-img-top" src="img/left.png" alt="Card image cap">
@@ -117,10 +127,13 @@
               </div>
             </div>
           </a>
-        </div>
+        </div> -->
         </div>
       </div>
-      <div class="picture-submenu">
+      <div class="picture-display sketch" id="sketch" style="display: none;">
+        <img class="imageDisplay" src="img/sketch.jpg" alt="">
+      </div>
+      <!-- <div class="picture-submenu">
         <div class="row dashboard-row">
           <div class="card login-card" style="width: 40%;">
           <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
@@ -145,19 +158,8 @@
           </a>
         </div>
         </div>
-      </div>
-      <div class="funny-pictures">
-        <div class="row">
-          <div class="card login-card" style="width: 20%;">
-          <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
-        </div>
-        </div>
-        <div class="row pictures-row-funny">
-          <div class="card login-card" id="loadingIconfunny" style="width: 50%;background: transparent;">
-            <img class="card-img-top" src="img/loading.gif" alt="Card image cap">
-            <div class="card-body"><h4>Loading...</h4></div>
-          </div>
-        
+      </div> -->
+      
         <!-- <a href='#picture-display' class='custom-card' style='width: 50%; height: 50%'>
         <div class='card col-sm-6 picture-card' style='height: 100%'>
           <img class='card-img-top' src="img/back_pink.jpg" style='width: 100%;height: 100%;'>
@@ -166,27 +168,23 @@
         </div>
         
       </div>
-      <div class="good-pictures" style="display: none;">
+      <div class="pictures" style="display: none;">
         <div class="row">
           <div class="card login-card" style="width: 20%;">
-          <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
+          <img class="card-img-top" src="img/cake.png" alt="Card image cap">
         </div>
         </div>
-        <div class="row pictures-row-good">
-          <div class="card login-card" id="loadingIcongood" style="width: 50%;background: transparent;">
+        <div style="width: 60%;margin: auto;background:transparent;border:none;color:black">
+            <h6>Fun times ... 🤩 </h6>
+        </div>
+        <div class="row pictures-row-pictures">
+          <div class="card login-card" id="loadingIconpictures" style="width: 50%;background: transparent;">
             <img class="card-img-top" src="img/loading.gif" alt="Card image cap">
             <div class="card-body"><h4>Loading...</h4></div>
           </div>
-        
-        <!-- <a href='#picture-display' class='custom-card' style='width: 50%; height: 50%'>
-        <div class='card col-sm-6 picture-card' style='height: 100%'>
-          <img class='card-img-top' src="img/back_pink.jpg" style='width: 100%;height: 100%;'>
-          </div>
-          </a> -->
         </div>
-        
       </div>
-      <div class="screenshots" style="display: none;">
+      <!--<div class="screenshots" style="display: none;">
         <div class="row">
           <div class="card login-card" style="width: 20%;">
           <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
@@ -197,22 +195,21 @@
             <img class="card-img-top" src="img/loading.gif" alt="Card image cap">
             <div class="card-body"><h4>Loading...</h4></div>
           </div>
-        
-        <!-- <a href='#picture-display' class='custom-card' style='width: 50%; height: 50%'>
-        <div class='card col-sm-6 picture-card' style='height: 100%'>
-          <img class='card-img-top' src="img/back_pink.jpg" style='width: 100%;height: 100%;'>
-          </div>
-          </a> -->
         </div>
         
-      </div>
+      </div> -->
       <div class="dates" style="display: none;">
         <div class="row">
           <div class="card login-card" style="width:  20%;">
-          <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
+          <img class="card-img-top" src="img/cake.png" alt="Card image cap">
           </div>
           
         </div>
+        <div class="row" style="text-align: center;">
+        <div style="width: 60%;margin: auto;background:transparent;border:none;color:black">
+            <h6>Birthdays to remember</h6>
+        </div>  
+        </div> 
         <div class="row">
           <div class="card login-card loadingIcondates" style="width: 50%;background: transparent;">
             <img class="card-img-top" src="img/loading.gif" alt="Card image cap">
@@ -221,28 +218,117 @@
         </div>
         <div class="row dates-row" style="height: auto;text-align: left;">
         </div>
-      </div>
-      <div class="poems" style="display: none;">
+      </div> 
+      <div class="messages" style="display: none;">
         <div class="row">
           <div class="card login-card" style="width:  20%;">
-          <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
+          <img class="card-img-top" src="img/cake.png" alt="Card image cap">
           </div>
           
         </div>
-        <div class="row">
-          <div class="card login-card loadingIconpoems" style="width: 50%;background: transparent;">
-            <img class="card-img-top" src="img/loading.gif" alt="Card image cap">
-            <div class="card-body"><h4>Loading...</h4></div>
+        <div class="row" style="text-align: center;">
+        <div style="width: 60%;margin: auto;background:transparent;border:none;color:black">
+            <h6>Messages from all chirants 😜</h6>
+        </div>  
+        <div class="card"  style='width: 90%;padding: 5%;margin:auto;margin-bottom: 3%;text-align: left;'>
+          <img class="card-img-top img-double" src="img/junaid.jpg" style="width:100%;margin: auto;padding-bottom: 5%;" alt="Card image cap">
+            <h5>Junaid</h5>
+          <div class="card-body">
+            <p class="card-text">Hey Vriddhi, Happiest Birthday ❤️ <br> Have a great day and a great year ahead.
+              Be prepared alot of statistics questions are going to come your way in the coming months. :p <br>
+              Take care and stay safe don't get anymore fatter 🤭 <br>
+              I wish that one day you'll be able to play piano as good as me and then we'll have a piano band with no other instrument 😂<br>
+              So ya wish you utmost happiness :'') <br>
+              Haappy birthday 🤗</p>
           </div>
         </div>
-        <div class="row poems-row" style="height: auto;text-align: left;">
+        <div class="card"  style='width: 90%;padding: 5%;margin:auto;margin-bottom: 3%;text-align: left;'>
+          <img class="card-img-top" src="img/rajat.jpg" style="width:100%;margin: auto;padding-bottom: 5%;" alt="Card image cap">
+            <h5>Rajat</h5>
+          <div class="card-body">
+            <p class="card-text">Wish you a very happy birthday... <br>
+              From where to start 🙈🙈 <br>
+              You were the great friend in College and in office.
+              Thank you so much for bringing me into Convonix aka Publicis Media.
+              Thank you for supporting me in and out of the office. <br>
+              Miss our trio Lunch break!! <br>
+              Wish Happy Quarantine Birthday once again and enjoy your day!!!</p>
+          </div>
+        </div>
+        <div class="card"  style='width: 90%;padding: 5%;margin:auto;margin-bottom: 3%;text-align: left;'>
+          <img class="card-img-top" src="img/mintu.jpg" style="width:100%;margin: auto;padding-bottom: 5%;" alt="Card image cap">
+            <h5>Mintu</h5>
+          <div class="card-body">
+            <p class="card-text">Happie birthday day aunty <br>
+              One more run scored* <br>
+              It's great having u as a frnd, it makes me feel alot younger🥳🥳 <br>
+              Enjoy moti👻</p>
+          </div>
+        </div>
+        <div class="card"  style='width: 90%;padding: 5%;margin:auto;margin-bottom: 3%;text-align: left;'>
+          <img class="card-img-top" src="img/akshay.jpg" style="width:100%;margin: auto;padding-bottom: 5%;" alt="Card image cap">
+            <h5>Akshay</h5>
+          <div class="card-body">
+            <p class="card-text">A wish for you on your birthday, whatever you ask may you receive, whatever you seek may you find, whatever you wish may it be fulfilled on your birthday and always. Happy birthday Project partner!!!! 😁</p>
+          </div>
+        </div>
+        <div class="card"  style='width: 90%;padding: 5%;margin:auto;margin-bottom: 3%;text-align: left;'>
+          <img class="card-img-top" src="img/kaajal.jpg" style="width:100%;margin: auto;padding-bottom: 5%;" alt="Card image cap">
+            <h5>Kaajal</h5>
+          <div class="card-body">
+            <p class="card-text">Forget about the past, <br>
+              You can’t change it. <br>
+              Forget about the future, <br>
+              You can’t predict it. <br>
+              Forget about the present, <br>
+              I didn’t get you one 😛 <br>
+              Happy quarantine birthday behena❤️</p>
+          </div>
+        </div>
+        <div class="card"  style='width: 90%;padding: 5%;margin:auto;margin-bottom: 3%;text-align: left;'>
+          <img class="card-img-top" src="img/bhavesh.jpg" style="width:100%;margin: auto;padding-bottom: 5%;" alt="Card image cap">
+            <h5>Bhavesh</h5>
+          <div class="card-body">
+            <p class="card-text">
+              From being project partners by chance to being best friends by choice, <br>
+              From laughing at jokes to making fun of each other, <br>
+              From TSEC canteen breaks to Dadar Sai Krupa dinners. <br>
+              From bunking college without any reason to finding reasons to bunk office. <br>
+              From being working professionals to starting M.tech together. <br>
+              We have come a long way. <br>
+              Happy birthday Best Friend 😁🤩 <br>
+              I wish you all the success. <br>
+              I also wish you get a little brains :p <br>
+              Just kidding........ you need a lot of brains 😆 <br>
+              Stay blessed. 🤗 </p>
+          </div>
+        </div>
+        <div class="card"  style='width: 90%;padding: 5%;margin:auto;margin-bottom: 3%;text-align: left;'>
+          <img class="card-img-top" src="img/singh.jpg" style="width:100%;margin: auto;padding-bottom: 5%;" alt="Card image cap">
+            <h5>Singh</h5>
+          <div class="card-body">
+            <p class="card-text">
+              To the pokemon lover, wishing you a very happy birthday, <br>
+              I have known you for quite a while <br>
+              it's your birthday 😊 come on smile <br>
+              friends like you are very few <br>
+              tujhe pasand hai soda aur mountain dew :p <br>
+              wish you get whatever you desire, every day a new attire<br>
+              hope this corona ends soon <br>
+              milengey sab machayengey dhoom <br>
+              wishing you a birthday one more time <br>
+              dosto ko treat nahi dena hai crime 🤪 </p>
+          </div>
+        </div>
+        </div>
         </div>
       </div>
       <div class="videos" style="display: none;">
         <div class="row dashboard-row">
           <div class="card login-card" style="width: 40%;">
-          <img class="card-img-top" src="img/logoinfinity.png" alt="Card image cap">
+          <img class="card-img-top" src="img/cake.png" alt="Card image cap">
         </div>
+        
         </div>
         <div class="row dashboard-row" style="display:flex; justify-content: space-evenly">
           <a href="#birthday-wishes" class="custom-card">
@@ -253,45 +339,30 @@
               </div>
             </div>
           </a>
-          <a href="#our-journey" class="custom-card">
+          <!-- <a href="#our-journey" class="custom-card">
             <div class="card col-sm-6 dashboard-card">
               <img class="card-img-top" src="img/birthday-and-party.png" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Our Journey</h5>
               </div>
             </div>
-          </a>
+          </a> -->
         </div>
         </div>
-        <div class="picture-display" style="display: none;">
-          <img class="imageDisplay" src="img/class.png" alt="">
-        </div>
-        <div class="birthday-wishes" style="display: none;">
-          <h1>Happy Birthday Jia!</h1>
-          <video class="videoDisplay" id="birthday-wishes" preload="auto" poster="" width="640" height="480" controls preload>
-           <source src="https://firebasestorage.googleapis.com/v0/b/infinity-plus-one.appspot.com/o/videos%2F1.mp4?alt=media&token=29bf857a-51eb-4cef-baea-dfb5cdc91ba9" type="video/mp4"></source>
+        <!-- <div class="picture-display" style="display: none;"> -->
+          <!-- <img class="imageDisplay" src="img/class.png" alt=""> -->
+        <!-- </div> -->
+        <div class="video" style="display: none;">
+          <div class="row">
+            <div class="card login-card" style="width:  20%;">
+            <img class="card-img-top" src="img/cake.png" alt="Card image cap">
+            </div>
+          </div>
+          <h1>Happy Birthday Vridhi🤩 - F.R.I.E.N.D.S!</h1>
+          <video class="video videoDisplay" id="birthday-wishes" preload="auto" poster="" width="640" height="480" controls preload>
+           <source src="https://firebasestorage.googleapis.com/v0/b/birthday-august.appspot.com/o/videos%2Faugust_birthday.mp4?alt=media&token=ce220565-2efd-463d-b7aa-0d5592b95536" type="video/mp4"></source>
           </video>
-         </div>
-         <div class="our-journey" style="display: none;">
-          <h1>The story of 2019!</h1>
-          <video class="videoDisplay" id="our-journey" preload="auto" poster="" width="640" height="480" controls preload>
-           <source src="https://firebasestorage.googleapis.com/v0/b/infinity-plus-one.appspot.com/o/videos%2Fvideocompress-090-XiaoYing_Video_1578132482332%5B1%5D.mp4?alt=media&token=df6fb5d6-c113-48d6-a0ec-c051fa4588b6" type="video/mp4"></source>
-          </video>
-         </div>
-         <div class="quote-day" style="display: none;">
-           <h4 style="margin: 10%">Quotes of the day!</h4>
-           <script type="text/javascript" src="https://theysaidso.com/gadgets/v3/theysaidso.js"></script>
-        <div class="tso_purply_box">
-          <script>TheySaidSo.render({ qod_category : 'inspire'});</script>
         </div>
-        <div class="tso_purply_box">
-          <script>TheySaidSo.render({ qod_category : 'love'});</script>
-        </div>
-        <div class="tso_purply_box">
-          <script>TheySaidSo.render({ qod_category : 'funny'});</script>
-        </div>
-         </div>
-    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="jquery-3.4.1.slim.min.js" ></script>
@@ -318,27 +389,29 @@
         <script type="text/javascript" src="cordova.js"></script>
         
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
 
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
 
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
 
-
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyCnooyx4xujIP9SccYZJrMBYKIoGrByLaE",
-    authDomain: "infinity-plus-one.firebaseapp.com",
-    databaseURL: "https://infinity-plus-one.firebaseio.com",
-    projectId: "infinity-plus-one",
-    storageBucket: "infinity-plus-one.appspot.com",
-    messagingSenderId: "663796731971",
-    appId: "1:663796731971:web:7823928713ec26520584f6",
-    measurementId: "G-6LNDLJP3V8"
+    apiKey: "AIzaSyDqCQROKpotiok8s99LE_cLvvCrZkarOpE",
+    authDomain: "birthday-august.firebaseapp.com",
+    databaseURL: "https://birthday-august.firebaseio.com",
+    projectId: "birthday-august",
+    storageBucket: "birthday-august.appspot.com",
+    messagingSenderId: "583172362816",
+    appId: "1:583172362816:web:3f9e96466b80faa72505a5",
+    measurementId: "G-63Q48FNR1T"
+    
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -354,7 +427,7 @@
           // ...
       }
   });
-
+  firebase.analytics();
 </script>
 <script>
 
@@ -413,7 +486,7 @@ function handleTouchMove(evt) {
 <script src="js/image.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script src="js/firebaseDb.js"></script>
-<script src="js/upload.js"></script>
+<!-- <script src="js/upload.js"></script> -->
 
     </body>
 </html>

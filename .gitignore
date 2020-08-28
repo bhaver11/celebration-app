@@ -1,7 +1,7 @@
 # Cordova Global
 plugins/
 
-# iOS Platform
+iOS Platform
 platforms/ios/build/
 platforms/ios/www/
 platforms/ios/cordova/console.log
