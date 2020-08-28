@@ -6,7 +6,8 @@ Images are pulled from firebase and stored on device cache for performance
 Video is also streamed from firebase cloud storage. 
 
 
-A project by: 
-Bhaveshkumar Yadav
+A project by: Bhaveshkumar Yadav
+
 IIT Bombay 
+
 bhaveshy@iitb.ac.in
