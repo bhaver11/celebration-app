@@ -45,13 +45,14 @@ var app = {
 
 app.initialize();
 
+function goBack() {
+    window.location = "#dashboard"
+}
+
 $(document).ready(function() {
-    // loadDashBoard()
-    // loadPage()
-    // window.location = "#login-parent"
+    $('.back-button').click(goBack);
     $(window).on('hashchange', function(){
-        // Your code goes here
-        loadPage();
+        loadPage(); //trigger page load on back-button
     }); 
     $(".videoDisplay").on("click", function(){
         if(!$.browser.mozilla) {
@@ -91,12 +92,14 @@ function enterPassword() {
   });
 }
 
+//Not used currently
 function checkPassword(password) {
     if(password=="august")
         return true;
     else
         return false;
 }
+
 var page='login-parent';
 function loadDashBoard(){
     $('.login-parent').hide(250);
@@ -117,6 +120,10 @@ function loadPage() {
             $("."+lastPage).hide(500);
         $("."+page).slideDown(500);
     }
+    if(page=='dashboard' || page=='login-parent')
+        $('.back-button').hide(500);
+    else
+        $('.back-button').show();
     if(page=='sketch'){
         $('.imageDisplay').attr('src','img/sketch.jpg')
     }
@@ -137,7 +144,7 @@ function loadPage() {
 }
 
 function playVideo() {
-    //  VideoPlayer.play("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4");
+     VideoPlayer.play("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4");
 }
 
 var pictureHTMLprefix=
@@ -184,7 +191,7 @@ function displayImages(imageArray,type){
             // console.log("Adding id="+id);
             $(".pictures-row-"+type).append(pictureHTMLprefix+"src='img/loading.gif' id='"+id+"' onclick='displayPicture(this)'"+pictureHTMLsuffix);   
             $("#"+id).addClass(type+"pic_"+classCount);
-            readFile(url);
+            // readFile(url);
         }
         classCount++;
     });

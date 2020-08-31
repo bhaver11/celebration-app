@@ -235,3 +235,14 @@ a.custom-card:hover {
 .img-double {
     max-height: 10%;
 }
+
+.back-button {
+    /* background-color: transparent; */
+    /* border: none; */
+    display: none;
+    background-image: url('../img/back-button.jpg');
+    position: fixed;
+    top: 4%;
+    left: 2%;
+    z-index: 100;
+}
