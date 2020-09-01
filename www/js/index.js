@@ -129,7 +129,7 @@ function loadPage() {
         $('.imageDisplay').attr('src','img/sketch.jpeg')
     }
     if(page=="pictures")
-        getImageUrls("pictures");
+        getImageUrls("farewell");
     if(page=='picture-display') {
         $('body').css('background-image','');
     }
@@ -150,8 +150,8 @@ function playVideo() {
 
 var pictureHTMLprefix=
 "<a href='#picture-display' class='custom-card' style='width: 50%; height: 50%'>"+
-    "<div class='card col-sm-6 picture-card' style='height: 100%'>"+
-        "<img class='card-img-top'  style='width: 98%;height: 100%;padding: 0'";
+    "<div class='card col-sm-6 picture-card' style='height: 250px'>"+
+        "<img class='card-img-top'  style='width: 100%;max-height: 100%;padding: 0'";
 var pictureHTMLsuffix=
 ">"+
     "</div>"+
@@ -175,6 +175,7 @@ function displayTextData(textData,type) {
 }
 
 function displayImages(imageArray,type){
+    type = "pictures"
     var classCount=1;
     // console.log("displaying images");
     // console.log(imageArray);

@@ -79,7 +79,7 @@ var metadata = {
 };
 
 // Upload file and metadata to the object 'images/mountains.jpg'
-var uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
+var uploadTask = storageRef.child('farewell/' + file.name).put(file, metadata);
 
 // Listen for state changes, errors, and completion of the upload.
 uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
@@ -117,7 +117,7 @@ uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
   // Upload completed successfully, now we can get the download URL
   uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
     console.log('File available at', downloadURL);
-    db.collection("images").doc('picturesurls').update({
+    db.collection("images").doc('farewellurls').update({
         url: firebase.firestore.FieldValue.arrayUnion(downloadURL)
     })
   });
