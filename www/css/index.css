@@ -246,3 +246,7 @@ a.custom-card:hover {
     left: 2%;
     z-index: 100;
 }
+
+.message {
+    font-size: medium;
+}

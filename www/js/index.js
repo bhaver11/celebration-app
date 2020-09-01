@@ -54,6 +54,7 @@ $(document).ready(function() {
     $(window).on('hashchange', function(){
         loadPage(); //trigger page load on back-button
     }); 
+    window.location = "#messages"
     $(".videoDisplay").on("click", function(){
         if(!$.browser.mozilla) {
         // mozilla HTML5 video auto-supports auto click-to-play
