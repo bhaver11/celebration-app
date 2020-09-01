@@ -54,7 +54,7 @@ $(document).ready(function() {
     $(window).on('hashchange', function(){
         loadPage(); //trigger page load on back-button
     }); 
-    window.location = "#messages"
+    // window.location = "#messages"
     $(".videoDisplay").on("click", function(){
         if(!$.browser.mozilla) {
         // mozilla HTML5 video auto-supports auto click-to-play
@@ -118,7 +118,7 @@ function loadPage() {
     if(page) {
         
         if(lastPage)
-            $("."+lastPage).hide(500);
+            $("."+lastPage).slideUp(500);
         $("."+page).slideDown(500);
     }
     if(page=='dashboard' || page=='login-parent')
@@ -126,7 +126,7 @@ function loadPage() {
     else
         $('.back-button').show();
     if(page=='sketch'){
-        $('.imageDisplay').attr('src','img/sketch.jpg')
+        $('.imageDisplay').attr('src','img/sketch.jpeg')
     }
     if(page=="pictures")
         getImageUrls("pictures");
