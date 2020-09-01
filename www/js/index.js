@@ -46,7 +46,8 @@ var app = {
 app.initialize();
 
 function goBack() {
-    window.location = "#dashboard"
+    // window.location = "#dashboard"
+    window.history.back()
 }
 
 $(document).ready(function() {
@@ -105,16 +106,24 @@ var page='login-parent';
 function loadDashBoard(){
     $('.login-parent').hide(250);
     $('.dashboard').slideDown(250); 
-    window.location = "#dashboard"
+    // window.location = "#dashboard"
 }
 
 function loadPage() {
     lastPage = page;
     page = window.location.href.toString().split("#")[1];
     console.log("Last page: "+lastPage+"Curr page: "+page);
-    if(lastPage=="dashboard" && page == undefined){
-        navigator.app.exitApp();
+    if(lastPage=="dashboard" && (page == undefined || page =="dashboard")){
+        if(page==lastPage){
+            // navigator.app.exitApp();
+        }
+        page="dashboard";
+        window.location.href = "#dashboard"
+        return;
     }
+    // if(lastPage=="dashboard" && page == undefined || (page == undefined)){
+        // navigator.app.exitApp();
+    // }
     if(page) {
         
         if(lastPage)

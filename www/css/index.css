@@ -237,10 +237,12 @@ a.custom-card:hover {
 }
 
 .back-button {
-    /* background-color: transparent; */
+    background-color: darksalmon;
+    border: none;
+    color: black;
     /* border: none; */
     display: none;
-    background-image: url('../img/back-button.jpg');
+    /* background-image: url('../img/back-button.jpg'); */
     position: fixed;
     top: 4%;
     left: 2%;
