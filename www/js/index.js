@@ -112,14 +112,15 @@ function loadDashBoard(){
 function loadPage() {
     lastPage = page;
     page = window.location.href.toString().split("#")[1];
-    console.log("Last page: "+lastPage+"Curr page: "+page);
-    if(lastPage=="dashboard" && (page == undefined || page =="dashboard")){
-        if(page==lastPage){
-            // navigator.app.exitApp();
-        }
-        page="dashboard";
-        window.location.href = "#dashboard"
+    // console.log("Last page: "+lastPage+"Curr page: "+page);
+    if(page == '' || page == undefined){
+        page = 'login-parent'
+        $('.'+lastPage).slideUp(500);
+        $('.login-parent').slideDown(500);
         return;
+    }
+    if(lastPage == page){
+        navigator.app.exitApp()
     }
     // if(lastPage=="dashboard" && page == undefined || (page == undefined)){
         // navigator.app.exitApp();
@@ -130,7 +131,7 @@ function loadPage() {
             $("."+lastPage).slideUp(500);
         $("."+page).slideDown(500);
     }
-    if(page=='dashboard' || page=='login-parent')
+    if(page=='dashboard' || page=='login-parent' || page == undefined)
         $('.back-button').hide(500);
     else
         $('.back-button').show();
