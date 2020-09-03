@@ -112,14 +112,15 @@ function loadDashBoard(){
 function loadPage() {
     lastPage = page;
     page = window.location.href.toString().split("#")[1];
-    console.log("Last page: "+lastPage+"Curr page: "+page);
-    if(lastPage=="dashboard" && (page == undefined || page =="dashboard")){
-        if(page==lastPage){
-            navigator.app.exitApp();
-        }
-        page="login-parent";
-        window.location.href = "#login-parent"
+    // console.log("Last page: "+lastPage+"Curr page: "+page);
+    if(page == '' || page == undefined){
+        page = 'login-parent'
+        $('.'+lastPage).slideUp(500);
+        $('.login-parent').slideDown(500);
         return;
+    }
+    if(lastPage == page){
+        navigator.app.exitApp()
     }
     // if(lastPage=="dashboard" && page == undefined || (page == undefined)){
         // navigator.app.exitApp();
