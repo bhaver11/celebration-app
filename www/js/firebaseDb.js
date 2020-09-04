@@ -1,5 +1,5 @@
 var storage = firebase.storage();
-var starsRef = storage.ref().child('pictures/bodhitree_fc5.png');
+// var starsRef = storage.ref().child('pictures/bodhitree_fc5.png');
 var urlArray;
 var db = firebase.firestore();
 
@@ -79,11 +79,11 @@ var saveData = (function () {
 
 
 // Get the download URL
-starsRef.getDownloadURL().then(function(url) {
+// starsRef.getDownloadURL().then(function(url) {
   // Insert url into an <img> tag to "download"
 //   $("#test").attr("src",url);
-const proxyurl = "https://cors-anywhere.herokuapp.com/";
-url = proxyurl + url;
+// const proxyurl = "https://cors-anywhere.herokuapp.com/";
+// url = proxyurl + url;
     // var xhr = new XMLHttpRequest();
     //     xhr.responseType = 'blob';
     //     xhr.onload = function(event) {
@@ -96,31 +96,31 @@ url = proxyurl + url;
     //     xhr.send();
     //     // save
       
-  urlArray.push(url);
+  // urlArray.push(url);
   // console.log(url);
-}).catch(function(error) {
+// }).catch(function(error) {
 
   // A full list of error codes is available at
   // https://firebase.google.com/docs/storage/web/handle-errors
-  switch (error.code) {
-    case 'storage/object-not-found':
+  // switch (error.code) {
+    // case 'storage/object-not-found':
       // File doesn't exist
-      break;
+      // break;
 
-    case 'storage/unauthorized':
+    // case 'storage/unauthorized':
       // User doesn't have permission to access the object
-      break;
+      // break;
 
-    case 'storage/canceled':
+    // case 'storage/canceled':
       // User canceled the upload
-      break;
+      // break;
 
 
-    case 'storage/unknown':
+    // case 'storage/unknown':
       // Unknown error occurred, inspect the server response
-      break;
-  }
-});
+      // break;
+  // }
+// });
 
 // window.requestFileSystem(window.TEMPORARY, 5 * 1024 * 1024, function (fs) {
 
