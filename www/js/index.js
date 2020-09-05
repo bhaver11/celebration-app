@@ -51,6 +51,9 @@ function goBack() {
 }
 
 $(document).ready(function() {
+
+    loadDataFromJSON()
+
     $('.back-button').click(goBack);
     $(window).on('hashchange', function(){
         loadPage(); //trigger page load on back-button
@@ -68,6 +71,24 @@ $(document).ready(function() {
         } // end mozilla browser check
     }); // end video click handler
 });
+
+// Load json config file and update the DOM
+function loadDataFromJSON() {
+
+    //Todo:: Add loading indicator
+    
+    $.getJSON('data.json', function (data){
+
+        $('.logo').attr('src',data['images']['logo'])
+        //from -> https://stackoverflow.com/questions/684672/how-do-i-loop-through-or-enumerate-a-javascript-object/684692#684692
+        for (var key in data) {
+            if (data.hasOwnProperty(key)) {
+                $('#'+key).html(data[key])
+            }
+        }
+    })
+}
+
 
 function enterPassword() {
     $('#loginButton').hide();
