@@ -127,13 +127,6 @@ h1 {
     /* align-items: center; */
 }
 
-#loginButton {
-    /* background-color: pink; */
-    /* color: black; */
-    /* border: 0 */
-    
-}
-
 .first-message{
     background: pink;
     width: 100%;
@@ -142,12 +135,6 @@ h1 {
     /* background: transparent; */
     color: black 
     
-}
-
-#password {
-    display: none;
-    font-size:small;
-    /* margin-top: 0; */
 }
 
 .dashboard {
@@ -211,7 +198,7 @@ a.custom-card:hover {
     margin: auto;
     overflow: auto;
 }
-
+/* 
 .quote ::before{
     top: -20px;
     left: -156px;
@@ -224,7 +211,7 @@ a.custom-card:hover {
 
 .quote_text {
     color: black;
-}
+} */
 
 .card-img-top {
     width: 80%;
